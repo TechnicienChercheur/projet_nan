@@ -53,6 +53,13 @@ dev_dependencies:
 flutter:
   assets:
     - vato/images/TikenJah.jpg
+    - vato/images/healthcare.jpeg
+    - vato/images/img2.png
+    - vato/images/img3.png
+    - vato/images/img4.png
+    - vato/images/img5.png
+    - vato/images/img6.png
+    - vato/images/img7.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
