@@ -1,5 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/assurance.dart';
+import 'package:flutter_application_2/carie.dart';
+import 'package:flutter_application_2/consultation.dart';
+import 'package:flutter_application_2/message.dart';
+import 'package:flutter_application_2/profile.dart';
+import 'package:flutter_application_2/settings.dart';
+import 'package:flutter_application_2/soins.dart';
 
 class scrollables2 extends StatefulWidget {
   const scrollables2({Key? key}) : super(key: key);
@@ -9,107 +16,123 @@ class scrollables2 extends StatefulWidget {
 }
 
 class _scrollables2State extends State<scrollables2> {
+  get onTap => null;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.blueAccent,
-          leading: IconButton(onPressed: () {}, icon: Icon(Icons.menu)),
-          actions: [
-            PopupMenuButton(
-              icon: Icon(Icons.more_vert),
-              itemBuilder: (context) => [
-                PopupMenuItem(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Settings",
-                        style: TextStyle(fontSize: 25),
-                      ),
-                      Icon(
-                        Icons.settings,
-                        color: Colors.blueAccent,
-                      )
-                    ],
-                  ),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.blueAccent,
+        actions: [
+          PopupMenuButton(
+            icon: Icon(Icons.more_vert),
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Settings",
+                      style: TextStyle(fontSize: 25),
+                    ),
+                    Icon(
+                      Icons.settings,
+                      color: Colors.blueAccent,
+                    )
+                  ],
                 ),
-                PopupMenuItem(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Share",
-                        style: TextStyle(fontSize: 25),
-                      ),
-                      Icon(
-                        Icons.share,
-                        color: Colors.blueAccent,
-                      )
-                    ],
-                  ),
+              ),
+              PopupMenuItem(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Share",
+                      style: TextStyle(fontSize: 25),
+                    ),
+                    Icon(
+                      Icons.share,
+                      color: Colors.blueAccent,
+                    )
+                  ],
                 ),
-                PopupMenuItem(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Learn more",
-                        style: TextStyle(fontSize: 25),
-                      ),
-                      Icon(
-                        Icons.info,
-                        color: Colors.blueAccent,
-                      )
-                    ],
+              ),
+              PopupMenuItem(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Learn more",
+                      style: TextStyle(fontSize: 25),
+                    ),
+                    Icon(
+                      Icons.info,
+                      color: Colors.blueAccent,
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          Padding(
+            padding:
+                const EdgeInsets.only(bottom: 9, right: 9, left: 9, top: 5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Image.asset(
+                  "vato/images/img7.png",
+                  height: 130,
+                ),
+                Container(
+                  width: 260,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: Colors.amber,
+                    image: DecorationImage(
+                        image: AssetImage("vato/images/img6.png"),
+                        fit: BoxFit.fill),
                   ),
                 ),
               ],
             ),
-          ],
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.only(bottom: 9, right: 9, left: 9, top: 5),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Image.asset(
-                    "vato/images/img7.png",
-                    height: 130,
-                  ),
-                  Text(
-                    "Choisir une catégorie\npour commencer",
-                    style: TextStyle(
-                        fontSize: 25,
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              height: 450,
-              decoration: BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(30),
-                      topLeft: Radius.circular(30))),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 40,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
+          ),
+          Container(
+            height: 630,
+            decoration: BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(30),
+                    topLeft: Radius.circular(30))),
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 40,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      splashColor: Colors.grey,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return soins();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
                         width: 170,
-                        height: 180,
+                        height: 230,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -127,12 +150,24 @@ class _scrollables2State extends State<scrollables2> {
                           ],
                         ),
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Container(
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return carie();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
                         width: 170,
-                        height: 180,
+                        height: 230,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -163,17 +198,29 @@ class _scrollables2State extends State<scrollables2> {
                         //   ),
                         // ),
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return assurance();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
                         width: 170,
-                        height: 180,
+                        height: 230,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -187,16 +234,28 @@ class _scrollables2State extends State<scrollables2> {
                             Text(
                               "Assurance",
                               style: TextStyle(fontSize: 20),
-                            )
+                            ),
                           ],
                         ),
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      Container(
+                    ),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return consultation();
+                            },
+                          ),
+                        );
+                      },
+                      child: Container(
                         width: 170,
-                        height: 180,
+                        height: 230,
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
@@ -214,39 +273,101 @@ class _scrollables2State extends State<scrollables2> {
                           ],
                         ),
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-                  //     Container(
-                  //       width: 170,
-                  //       height: 180,
-                  //       decoration: BoxDecoration(
-                  //         color: Colors.white,
-                  //         borderRadius: BorderRadius.circular(10),
-                  //       ),
-                  //     ),
-                  //     SizedBox(
-                  //       width: 20,
-                  //     ),
-                  //     Container(
-                  //       width: 170,
-                  //       height: 180,
-                  //       decoration: BoxDecoration(
-                  //         color: Colors.white,
-                  //         borderRadius: BorderRadius.circular(10),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
-                ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Container(
+                //       width: 170,
+                //       height: 180,
+                //       decoration: BoxDecoration(
+                //         color: Colors.white,
+                //         borderRadius: BorderRadius.circular(10),
+                //       ),
+                //     ),
+                //     SizedBox(
+                //       width: 20,
+                //     ),
+                //     Container(
+                //       width: 170,
+                //       height: 180,
+                //       decoration: BoxDecoration(
+                //         color: Colors.white,
+                //         borderRadius: BorderRadius.circular(10),
+                //       ),
+                //     ),
+                //   ],
+                // ),
+              ],
+            ),
+          )
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                  color: Colors.blueAccent,
+                  image: DecorationImage(
+                      image: AssetImage("vato/images/healthcare.jpeg"),
+                      fit: BoxFit.fill)),
+              child: Text(
+                "Ma Santé d'Abord",
+                style: TextStyle(color: Colors.black, fontSize: 24),
               ),
-            )
+            ),
+            ListTile(
+              leading: Icon(Icons.message),
+              title: Text("Messages"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return message();
+                    },
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text("Profile"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return profile();
+                    },
+                  ),
+                );
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("Settings"),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return settings();
+                    },
+                  ),
+                );
+              },
+            ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
