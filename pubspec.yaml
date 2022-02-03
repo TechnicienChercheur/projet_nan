@@ -60,6 +60,9 @@ flutter:
     - vato/images/img5.png
     - vato/images/img6.png
     - vato/images/img7.png
+    - vato/images/img1.png
+    - vato/images/logo.png
+    - vato/images/img9.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
